@@ -268,14 +268,14 @@ abstract class ElementaryWidget<I extends IWidgetModel> extends Widget {
 /// errors such as showing snack-bars.
 abstract class WidgetModel<W extends ElementaryWidget,
     M extends ElementaryModel> with Diagnosticable implements IWidgetModel {
-  final M _model;
+  final M? _model;
 
   /// Instance of [ElementaryModel] for this [WidgetModel].
   ///
   /// The only business logic dependency that is needed for the [WidgetModel].
   @protected
   @visibleForTesting
-  M get model => _model;
+  M? get model => _model;
 
   /// Widget that uses this [WidgetModel] for building part of the user interface.
   ///
@@ -320,7 +320,7 @@ abstract class WidgetModel<W extends ElementaryWidget,
   W? _widget;
 
   /// Creates an instance of the [WidgetModel].
-  WidgetModel(this._model);
+  WidgetModel([this._model]);
 
   /// Called while the first build for initialization of this [WidgetModel].
   ///
@@ -331,7 +331,7 @@ abstract class WidgetModel<W extends ElementaryWidget,
   @visibleForTesting
   void initWidgetModel() {
     _model
-      ..init()
+      ?..init()
       .._wmHandler = onErrorHandle;
   }
 
@@ -397,7 +397,7 @@ abstract class WidgetModel<W extends ElementaryWidget,
   @mustCallSuper
   @visibleForTesting
   void dispose() {
-    _model.dispose();
+    _model?.dispose();
   }
 
   /// Called whenever the application is reassembled during debugging, for
