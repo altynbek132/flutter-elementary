@@ -267,7 +267,7 @@ abstract class ElementaryWidget<I extends IWidgetModel> extends Widget {
 /// [ElementaryModel.handleError] method. Can be useful for general handling
 /// errors such as showing snack-bars.
 abstract class WidgetModel<W extends ElementaryWidget,
-    M extends ElementaryModel> with Diagnosticable implements IWidgetModel {
+    M extends ElementaryModel?> with Diagnosticable implements IWidgetModel {
   final M? _model;
 
   /// Instance of [ElementaryModel] for this [WidgetModel].
