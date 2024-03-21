@@ -197,7 +197,7 @@ abstract class ElementaryWidget<I extends IWidgetModel> extends Widget {
   /// to improve implementation of the [WidgetModel].
   /// But [BuildContext] CAN be used in all builder functions and all widgets
   /// used here.
-  Widget build(I wm);
+  Widget build(I wm, BuildContext context);
 }
 
 /// The basic implementation of the entity responsible for all
@@ -451,7 +451,7 @@ final class Elementary extends ComponentElement {
 
   @override
   Widget build() {
-    return widget.build(_wm);
+    return widget.build(_wm, this);
   }
 
   @override
