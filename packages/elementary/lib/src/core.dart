@@ -606,7 +606,7 @@ mixin MockElementaryModelMixin implements ElementaryModel {
 /// WidgetModel is mocked.
 @visibleForTesting
 mixin MockWidgetModelMixin<W extends ElementaryWidget,
-    M extends ElementaryModel> implements WidgetModel<W, M> {
+    M extends ElementaryModel?> implements WidgetModel<W, M> {
   @override
   set _element(BuildContext? _) {}
 
