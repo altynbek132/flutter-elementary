@@ -28,7 +28,7 @@ class TestPageWidget extends ElementaryWidget<TestPageWidgetModel> {
   }) : super(wmFactory, key: key);
 
   @override
-  Widget build(TestPageWidgetModel wm) {
+  Widget build(TestPageWidgetModel wm, BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Test'),
@@ -108,7 +108,7 @@ class TestPageWidgetModel extends WidgetModel<TestPageWidget, TestPageModel> {
   Future<void> increment() async {
     _calculatingController.value = true;
 
-    final newVal = await model.increment();
+    final newVal = await model!.increment();
     _valueController.value = newVal.toString();
 
     _calculatingController.value = false;
@@ -117,7 +117,7 @@ class TestPageWidgetModel extends WidgetModel<TestPageWidget, TestPageModel> {
   Future<void> decrement() async {
     _calculatingController.value = true;
 
-    final newVal = await model.decrement();
+    final newVal = await model!.decrement();
     _valueController.value = newVal.toString();
 
     _calculatingController.value = false;
@@ -127,7 +127,7 @@ class TestPageWidgetModel extends WidgetModel<TestPageWidget, TestPageModel> {
   void initWidgetModel() {
     super.initWidgetModel();
 
-    _valueController = ValueNotifier<String>(model.value.toString());
+    _valueController = ValueNotifier<String>(model!.value.toString());
   }
 
   @override

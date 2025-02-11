@@ -297,7 +297,7 @@ class ElementaryWidgetTest
   }) : super(wmFactory, key: key);
 
   @override
-  Widget build(IElementaryWidgetModelMock wm) {
+  Widget build(IElementaryWidgetModelMock wm, BuildContext context) {
     buildCallback.call(wm);
     return Container();
   }

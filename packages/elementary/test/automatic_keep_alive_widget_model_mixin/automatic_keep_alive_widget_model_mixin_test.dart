@@ -300,7 +300,7 @@ class TestElementaryWidget
         );
 
   @override
-  Widget build(IElementaryWidgetModelTest wm) {
+  Widget build(IElementaryWidgetModelTest wm, BuildContext context) {
     return Scaffold(
       body: ListView(
         key: listViewKey,

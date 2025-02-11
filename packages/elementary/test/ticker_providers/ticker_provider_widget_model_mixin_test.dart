@@ -136,7 +136,7 @@ class TestElementaryWidget
         );
 
   @override
-  Widget build(IElementaryWidgetModelTest wm) {
+  Widget build(IElementaryWidgetModelTest wm, BuildContext context) {
     return MaterialApp(
       home: Scaffold(
         body: Container(),

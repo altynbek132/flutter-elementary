@@ -201,7 +201,7 @@ class ElementaryWidgetTest
   }) : super(wmFactory, key: key);
 
   @override
-  Widget build(IElementaryWidgetModelTest wm) {
+  Widget build(IElementaryWidgetModelTest wm, BuildContext context) {
     return Container();
   }
 }

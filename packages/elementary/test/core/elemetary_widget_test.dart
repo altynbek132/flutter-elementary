@@ -25,7 +25,7 @@ class _TestWmWidget extends ElementaryWidget {
   const _TestWmWidget(WidgetModelFactory wmFactory) : super(wmFactory);
 
   @override
-  Widget build(IWidgetModel wm) {
+  Widget build(IWidgetModel wm, BuildContext context) {
     throw UnimplementedError();
   }
 }
